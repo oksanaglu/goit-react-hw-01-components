@@ -4,31 +4,31 @@ import css from './Profile.module.css'
 
 export const Profile = ({ username, avatar, tag, location, stats: { followers, views, likes } }) => {
   return (
-    <div class={css.cardProfile}>
-      <div class={css.description}>
+    <div className={css.cardProfile}>
+      <div className={css.description}>
         <img
           src={avatar}
           alt="User avatar"
           class={css.avatar}
         />
-        <p class={css.userName}>{username}</p>
-        <p class={css.tag}>{tag}</p>
-        <p class={css.location}>{location}</p>
+        <p className={css.userName}>{username}</p>
+        <p className={css.tag}>{tag}</p>
+        <p className={css.location}>{location}</p>
      
       </div>
     
-      <ul class={css.stats}>
-        <li class={css.statsItem}>
-          <span class={css.label}>Followers</span>
-          <span class={css.quantity}>{followers}</span>
+      <ul className={css.stats}>
+        <li className={css.statsItem}>
+          <span className={css.label}>Followers</span>
+          <span className={css.quantity}>{followers}</span>
         </li>
-        <li class={css.statsItem}>
-          <span class={css.label}>Views</span>
-          <span class={css.quantity}>{views}</span>
+        <li className={css.statsItem}>
+          <span className={css.label}>Views</span>
+          <span className={css.quantity}>{views}</span>
         </li>
-        <li class={css.statsItem}>
-          <span class={css.label}>Likes</span>
-          <span class={css.quantity}>{likes}</span>
+        <li className={css.statsItem}>
+          <span className={css.label}>Likes</span>
+          <span className={css.quantity}>{likes}</span>
         </li >
       </ul>
     </div>
@@ -37,9 +37,9 @@ export const Profile = ({ username, avatar, tag, location, stats: { followers, v
 };
 
 Profile.propTypes = {
-  username: PropTypes.string,
-  avatar: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
+  username: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
   stats: PropTypes.objectOf(PropTypes.number),
 };

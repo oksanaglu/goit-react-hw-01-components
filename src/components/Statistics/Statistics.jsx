@@ -1,16 +1,18 @@
 import PropTypes from 'prop-types';
+// import { getRandomHexColor } from './hex'
 import css from './Statistics.module.css'
 
 export const Statistics = ({ title, stats }) => {
+  // const getRandomHexColorList = getRandomHexColor(); {getRandomHexColorList}
     return (
-        <section class={css.cardStatistics}>
-            <h2 class={css.title}>{title}</h2>
+        <section className={css.cardStatistics}>
+            <h2 className={css.title}>{title}</h2>
 
-            <ul class={css.statList}>
+            <ul className={css.statList}> 
                 {stats.map(({ id, label, percentage }) =>
-                    <li class={css.item} key={id}>
-                        <span class={css.label}>{label}</span>
-                        <span class={css.percentage}>{percentage}%</span>
+                    <li className={css.item} key={id}>
+                        <span className={css.label}>{label}</span>  
+                        <span className={css.percentage}>{percentage}%</span>
                     </li>
                 )}
             </ul>
@@ -22,9 +24,11 @@ Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
-      label: PropTypes.string,
-      percentage: PropTypes.number,
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
     })
   ),
 };
+
+// const getRandomHexColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
