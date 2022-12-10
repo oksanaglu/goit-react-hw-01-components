@@ -34,3 +34,4 @@ export const Name = styled.p`
   font-size: 24px;
   font-weight: 700;
 `;
+
