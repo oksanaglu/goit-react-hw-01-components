@@ -1,40 +1,34 @@
 import PropTypes from 'prop-types';
-import css from './Profile.module.css'
+import { Card, Description, Avatar, UserName, UserTag, Userlocation, StatsList, StatsItem, Label, Quantity } from './Profile.styled';
 
-
-export const Profile = ({ username, avatar, tag, location, stats: { followers, views, likes } }) => {
+export const Profile = ({ username, tag, location, avatar, stats: { followers, views, likes } }) => {
   return (
-    <div className={css.cardProfile}>
-      <div className={css.description}>
-        <img
-          src={avatar}
-          alt="User avatar"
-          class={css.avatar}
-        />
-        <p className={css.userName}>{username}</p>
-        <p className={css.tag}>{tag}</p>
-        <p className={css.location}>{location}</p>
-     
-      </div>
-    
-      <ul className={css.stats}>
-        <li className={css.statsItem}>
-          <span className={css.label}>Followers</span>
-          <span className={css.quantity}>{followers}</span>
-        </li>
-        <li className={css.statsItem}>
-          <span className={css.label}>Views</span>
-          <span className={css.quantity}>{views}</span>
-        </li>
-        <li className={css.statsItem}>
-          <span className={css.label}>Likes</span>
-          <span className={css.quantity}>{likes}</span>
-        </li >
-      </ul>
-    </div>
-  );
+    <Card>
+      <Description>
+        <Avatar src={avatar} alt="User avatar" />
+        <UserName>{username}</UserName>
+        <UserTag>@{tag}</UserTag>
+        <Userlocation>{location}</Userlocation>
+      </Description>
 
+      <StatsList class="stats">
+        <StatsItem>
+          <Label>Followers</Label>
+          <Quantity>{followers}</Quantity>
+        </StatsItem>
+        <StatsItem>
+          <Label>Views</Label>
+          <Quantity>{views}</Quantity>
+        </StatsItem>
+        <StatsItem>
+          <Label>Likes</Label>
+          <Quantity>{likes}</Quantity>
+        </StatsItem>
+      </StatsList>
+    </Card>
+  );
 };
+
 
 Profile.propTypes = {
   username: PropTypes.string.isRequired,

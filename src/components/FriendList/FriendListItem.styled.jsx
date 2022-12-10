@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.ul`
-  margin: 20px auto 0 auto;
-  width: 300px;
-  padding: 0;
-`;
-
-
 export const FriendItem = styled.li`
   display: flex;
   justify-content: start;
