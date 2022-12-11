@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import { Container, Title, StatList, StatItem, Label, Percentage } from './Statistics.styled';
 
-export const Statistics = ({ title, stats }) => {
+export const Statistics = ({ stats }) => {
   return (
     <Container>
-      <Title>{title}</Title>
+      <Title>Upload stats</Title>
       <StatList>
         {stats.map(({ id, label, percentage }) => (
           <StatItem key={id}>
@@ -19,7 +19,6 @@ export const Statistics = ({ title, stats }) => {
 
 
 Statistics.propTypes = {
-  title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string,
